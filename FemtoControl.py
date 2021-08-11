@@ -187,14 +187,8 @@ class FemtoControl(Device):
         except socket.error:
             self.error_stream('Socket error')
             ret = ''
-        # evaluate the response
-
         if 'DONE' in ret:
-            # write command acknowledged - nothing to return
             self.debug_stream('write command acknowledged')
-            ret = ''
-        else:
-            ret = ret
         return ret
 
 
